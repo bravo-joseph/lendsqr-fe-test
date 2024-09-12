@@ -1,0 +1,41 @@
+// 'mantine-breakpoint-xs': '36em',
+//         'mantine-breakpoint-sm': '48em',
+//         'mantine-breakpoint-md': '62em',
+//         'mantine-breakpoint-lg': '75em',
+//         'mantine-breakpoint-xl': '88em',
+@media (max-width: 74.9em) {
+  .container {
+    
+    background-color: white;
+    width: 50%;
+    display: none;
+    padding: 6rem;
+    gap: 7rem;
+    flex-direction: column;
+    img {
+      display: none;
+    }
+
+    img:first-child {
+      margin-bottom: 6rem;
+    }
+  }
+}
+
+@media (min-width: 74.9em) {
+  .container {
+    background-color: white;
+    width: 50%;
+    padding: 6rem;
+    gap: 7rem;
+    flex-direction: column;
+
+    img {
+      display: block;
+    }
+
+    img:first-child {
+      margin-bottom: 6rem;
+    }
+  }
+}
