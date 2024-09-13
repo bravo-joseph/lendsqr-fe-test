@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-
 'use client';
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-// import { twMerge } from 'tailwind-merge';
+import styles from "./index.module.scss"
+
 
 interface Props {
   href?: string;
@@ -28,10 +26,11 @@ const NavButton: React.FC<Props> = (props) => {
   return (
     <Link
       href={href ?? ""}
-      onClick={onClick}     
+      onClick={onClick}   
+      className={styles.container}  
     >
       {r.icon && r.icon}
-      <span className="pt-1">{children}</span>
+      <p className={styles.p}>{children}</p>
     </Link>
   );
 };

@@ -3,7 +3,27 @@ export interface NavGroup {
   routes: NavRoute[];
 }
 export type NavIcon =
-  | "dashboardIcon";
+  | "usersIcon"
+  | "guarantorsIcon"
+  | "loansIcon"
+  | "decisionsModelIcon"
+  | "savingsIcon"
+  | "loanRequestIcon"
+  | "whiteListIcon"
+  | "karmaIcon"
+  | "organizationIcon"
+  | "loanProductsIcon"
+  | "savingsProductIcon"
+  | "feesandChargingIcon"
+  | "transactionsIcon"
+  | "servicesIcon"
+  | "serviceAccountIcon"
+  | "settlementsIcon"
+  | "reportsIcon"
+  | "preferencesIcon"
+  | "feesandPricingIcon"
+  | "auditLogsIcon";
+  
 
 export interface NavRoute {
   name: string;

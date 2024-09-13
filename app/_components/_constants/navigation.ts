@@ -2,124 +2,119 @@ import { NavGroup } from "./types";
 
 const ADMIN_NAV_GROUPS: NavGroup[] = [
   {
-    name: 'Menu',
+    name: "Customers",
     routes: [
       {
-        name: 'Dashboard',
-        path: '/',
-        icon: 'dashboard',
+        name: "users",
+        path: "/users",
+        icon: "usersIcon",
+      },
+      {
+        name: "Guarantors",
+        path: "/guarantors",
+        icon: "guarantorsIcon",
+      },
+      {
+        name: "Loans",
+        path: "/loans",
+        icon: "loansIcon",
+      },
+      {
+        name: "Decision Models",
+        path: "/decision-models",
+        icon: "decisionsModelIcon",
+      },
+      {
+        name: "Savings",
+        path: "/savings",
+        icon: "savingsIcon",
+      },
+      {
+        name: "Loan Requests",
+        path: "/loan-requests",
+        icon: "loanRequestIcon",
+      },
+      {
+        name: "whiteList",
+        path: "/whitelist",
+        icon: "whiteListIcon",
+      },
+      {
+        name: "Karma",
+        path: "/karma",
+        icon: "karmaIcon",
       },
     ],
   },
   {
-    name: 'Human Resources',
+    name: "Businesses",
     routes: [
       {
-        name: 'Departments',
-        path: '/departments',
-        icon: 'stackIcon',
+        name: "Organization",
+        path: "/organization",
+        icon: "organizationIcon",
       },
       {
-        name: 'Cost Centre',
-        path: '/cost',
-        icon: 'stackIcon',
+        name: "Loan Products",
+        path: "/loan-products",
+        icon: "loanProductsIcon",
       },
       {
-        name: 'Employees',
-        path: '/employee',
-        icon: 'userGroupIcon',
+        name: "Savings Products",
+        path: "/savings-product",
+        icon: "savingsProductIcon",
       },
       {
-        name: 'Leave Application',
-        path: '/leave-application',
-        icon: 'clipboardIcon',
+        name: "Fees and Charges",
+        path: "/savings-product",
+        icon: "feesandChargingIcon",
+      },
+      {
+        name: "Transactions",
+        path: "/transactions",
+        icon: "transactionsIcon",
+      },
+      {
+        name: "Services",
+        path: "/services",
+        icon: "servicesIcon",
+      },
+      {
+        name: "Service Account",
+        path: "/service-accounts",
+        icon: "serviceAccountIcon",
+      },
+      {
+        name: "Settlements",
+        path: "/settlements",
+        icon: "settlementsIcon",
+      },
+      {
+        name: "Reports",
+        path: "/reports",
+        icon: "reportsIcon",
       },
     ],
   },
   {
-    name: 'Financials',
+    name: "Settings",
     routes: [
       {
-        name: 'Payrolls',
-        path: '/payroll',
-        icon: 'cashIcon',
+        name: "Preferences",
+        path: "/preferences",
+        icon: "preferencesIcon",
       },
       {
-        name: 'Salary Components',
-        path: '/salarycomponents',
-        icon: 'salarycompIcon',
+        name: "Fees and Pricing",
+        path: "/fees",
+        icon: "feesandPricingIcon",
       },
       {
-        name: 'Loans and Deductions',
-        path: '/loans',
-        icon: 'loanIcon',
-      },
-      {
-        name: 'Claims',
-        path: '/claim',
-        icon: 'coinsHand',
-      },
-      {
-        name: 'Pension',
-        path: '/pension',
-        icon: 'coinsHand',
-      },
-      {
-        name: 'Payroll Reports',
-        path: '/reports',
-        icon: 'DocumentIcon',
+        name: "Audit Logs",
+        path: "/preferences",
+        icon: "auditLogsIcon",
       },
     ],
-  },
-  {
-    name: 'Management',
-    routes: [
-      {
-        name: 'User Access',
-        path: '/user-access',
-        icon: 'userAddIcon',
-      },
-      {
-        name: 'Calendar',
-        path: '/calender',
-        icon: 'calendarIcon',
-      },
-      {
-        name: 'Edit Requests',
-        path: '/Pending',
-        icon: 'userEditIcon'
-      },
-      {
-        name: 'Settings',
-        path: '/settings',
-        icon: 'settingsIcon',
-      },
-    ],
-  },
-  {
-    name: 'Profile',
-    routes: [
-      {
-        name: 'My Profile',
-        path: '/profile',
-        icon: 'userIcon',
-      },
-      {
-        name: 'Chat',
-        path: '/chat',
-        icon: 'messageIcon',
-      },
-      {
-        name: 'Others',
-        path: '/others',
-        icon: 'OthersIcon',
-      },      
-      {
-        name: 'Activity Logs',
-        path: '/logs',
-        icon: 'settingsIcon',
-      },
-    ],
-  },
+  },  
 ];
 export default ADMIN_NAV_GROUPS;
