@@ -176,10 +176,51 @@ const NavigaitonIcon: React.FC<Props> = ({ id }) => {
           height={13}
         />
       );
-    // servicesIcon
-    // serviceAccountIcon
-    //settlementsIcon
-    // preferencesIcon
+    case "dashboardIcon":
+      return (
+        <Image
+          src="/images/icons/dashboardIcon.png"
+          alt=""
+          width={16}
+          height={14}
+        />
+      );
+    case "userscardIcon":
+      return (
+        <Image
+          src="/images/icons/userscardIcon.png"
+          alt=""
+          width={22}
+          height={22}
+        />
+      );
+    case "activeUsersIcon":
+      return (
+        <Image
+          src="/images/icons/activeUsersIcon.png"
+          alt=""
+          width={20}
+          height={17}
+        />
+      );
+    case "userswithLoanIcon":
+      return (
+        <Image
+          src="/images/icons/userswithLoanIcon.png"
+          alt=""
+          width={20}
+          height={17}
+        />
+      );
+    case "userswithsavingsIcon":
+      return (
+        <Image
+          src="/images/icons/userswithsavingsIcon.png"
+          alt=""
+          width={20}
+          height={17}
+        />
+      );    
     default:
       return null;
   }

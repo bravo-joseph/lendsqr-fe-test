@@ -16,10 +16,7 @@ interface Props {
 const AdminNavigationList: React.FC<Props> = ({ navGroups, prefix }) => {
   const [, { toggle }] = useDisclosure();
   return (
-    <div className={styles.container}>
-      <div className={styles.div}>
-        <img src="/images/png/lendsqr-logo.png" alt="company logo" />
-      </div>
+    <div className={styles.container}>     
       <ul>
         {navGroups.map((group) => (
           <li key={group.name}>

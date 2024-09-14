@@ -14,8 +14,7 @@ const AdminShellWithNavigation: React.FC<Props> = ({
       <AdminTopMenuBar />
       <div className={styles.div}>
         <aside>{navigation}</aside>
-        <main>
-          {/* <AdminTopMenuBar /> */}
+        <main>          
           {children}
         </main>
       </div>

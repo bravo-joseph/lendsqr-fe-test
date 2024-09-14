@@ -22,7 +22,12 @@ export type NavIcon =
   | "reportsIcon"
   | "preferencesIcon"
   | "feesandPricingIcon"
-  | "auditLogsIcon";
+  | "auditLogsIcon"
+  | "dashboardIcon"
+  | "userscardIcon"
+  | "activeUsersIcon"
+  | "userswithLoanIcon"
+  | "userswithsavingsIcon";
   
 
 export interface NavRoute {

@@ -2,6 +2,16 @@ import { NavGroup } from "./types";
 
 const ADMIN_NAV_GROUPS: NavGroup[] = [
   {
+    name: "",
+    routes: [
+      {
+        name: "Dashboard",
+        path: "/dashboard",
+        icon: "dashboardIcon",
+      },      
+    ],
+  },
+  {
     name: "Customers",
     routes: [
       {
