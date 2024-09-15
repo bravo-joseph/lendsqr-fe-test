@@ -4,6 +4,8 @@ import React from "react";
 import styles from "./index.module.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaAngleDown } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
+import { FiUserX } from "react-icons/fi";
 
 const elements = [
   {
@@ -94,7 +96,27 @@ const UserTable = () => {
         </p>
       </Table.Td>
       <Table.Td>
-        <BsThreeDotsVertical />
+        <Popover width={180} withArrow shadow="md">
+          <Popover.Target>
+            <div>
+              <BsThreeDotsVertical height={20} width={20} fontSize={"20px"} />
+            </div>
+          </Popover.Target>
+          <Popover.Dropdown>
+            <div className={styles.userElipsePopover}>
+              <FaRegEye />
+              <p>View Details</p>
+            </div>
+            <div className={styles.userElipsePopover}>
+              <FiUserX />
+              <p>Blacklist User</p>
+            </div>
+            <div className={styles.userElipsePopover}>
+              <FiUserX />
+              <p>Activate User</p>
+            </div>
+          </Popover.Dropdown>
+        </Popover>
       </Table.Td>
     </Table.Tr>
   ));
@@ -130,20 +152,31 @@ const UserTable = () => {
                       <p>Organisation</p>
                       <select
                         className={styles.popoverSelect}
+                        // placeholder="
                         name=""
                         id=""
                       ></select>
                     </div>
                     <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
-                      <input className={styles.popoverSelect} name="" id="" />
+                      <p>Username</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
                     </div>
                     <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
-                      <input className={styles.popoverSelect} name="" id="" />
+                      <p>Email</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
                     </div>
                     <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
+                      <p>Date</p>
                       <input className={styles.popoverSelect} name="" id="" />
                     </div>
                     <div className={styles.popoverDiv}>
@@ -167,7 +200,7 @@ const UserTable = () => {
                 </Popover>
               </Table.Th>
               <Table.Th>
-                <Popover width={200} withArrow shadow="md">
+                <Popover width={270} withArrow shadow="md">
                   <Popover.Target>
                     <div className={styles.tableHeader}>
                       <p>Username</p>
@@ -175,16 +208,59 @@ const UserTable = () => {
                     </div>
                   </Popover.Target>
                   <Popover.Dropdown>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quisquam odit veniam exercitationem, ea saepe debitis
-                      distinctio mollitia doloribus incidunt culpa?
-                    </p>
+                    <div className={styles.popoverDiv}>
+                      <p>Organisation</p>
+                      <select
+                        className={styles.popoverSelect}
+                        // placeholder="
+                        name=""
+                        id=""
+                      ></select>
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Username</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Email</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Date</p>
+                      <input className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Phone Number</p>
+                      <input
+                        placeholder="Phone Number"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Status</p>
+                      <select className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.filterActionDiv}>
+                      <button>Reset</button>
+                      <button>Filter</button>
+                    </div>
                   </Popover.Dropdown>
                 </Popover>
               </Table.Th>
               <Table.Th>
-                <Popover width={200} withArrow shadow="md">
+                <Popover width={270} withArrow shadow="md">
                   <Popover.Target>
                     <div className={styles.tableHeader}>
                       <p>Email</p>
@@ -192,16 +268,59 @@ const UserTable = () => {
                     </div>
                   </Popover.Target>
                   <Popover.Dropdown>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quisquam odit veniam exercitationem, ea saepe debitis
-                      distinctio mollitia doloribus incidunt culpa?
-                    </p>
+                    <div className={styles.popoverDiv}>
+                      <p>Organisation</p>
+                      <select
+                        className={styles.popoverSelect}
+                        // placeholder="
+                        name=""
+                        id=""
+                      ></select>
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Username</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Email</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Date</p>
+                      <input className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Phone Number</p>
+                      <input
+                        placeholder="Phone Number"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Status</p>
+                      <select className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.filterActionDiv}>
+                      <button>Reset</button>
+                      <button>Filter</button>
+                    </div>
                   </Popover.Dropdown>
                 </Popover>
               </Table.Th>
               <Table.Th>
-                <Popover width={200} withArrow shadow="md">
+                <Popover width={270} withArrow shadow="md">
                   <Popover.Target>
                     <div className={styles.tableHeader}>
                       <p>Phone Number</p>
@@ -209,16 +328,59 @@ const UserTable = () => {
                     </div>
                   </Popover.Target>
                   <Popover.Dropdown>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quisquam odit veniam exercitationem, ea saepe debitis
-                      distinctio mollitia doloribus incidunt culpa?
-                    </p>
+                    <div className={styles.popoverDiv}>
+                      <p>Organisation</p>
+                      <select
+                        className={styles.popoverSelect}
+                        // placeholder="
+                        name=""
+                        id=""
+                      ></select>
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Username</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Email</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Date</p>
+                      <input className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Phone Number</p>
+                      <input
+                        placeholder="Phone Number"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Status</p>
+                      <select className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.filterActionDiv}>
+                      <button>Reset</button>
+                      <button>Filter</button>
+                    </div>
                   </Popover.Dropdown>
                 </Popover>
               </Table.Th>
               <Table.Th>
-                <Popover width={200} withArrow shadow="md">
+                <Popover width={270} withArrow shadow="md">
                   <Popover.Target>
                     <div className={styles.tableHeader}>
                       <p>Date Joined</p>
@@ -226,16 +388,59 @@ const UserTable = () => {
                     </div>
                   </Popover.Target>
                   <Popover.Dropdown>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quisquam odit veniam exercitationem, ea saepe debitis
-                      distinctio mollitia doloribus incidunt culpa?
-                    </p>
+                    <div className={styles.popoverDiv}>
+                      <p>Organisation</p>
+                      <select
+                        className={styles.popoverSelect}
+                        // placeholder="
+                        name=""
+                        id=""
+                      ></select>
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Username</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Email</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Date</p>
+                      <input className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Phone Number</p>
+                      <input
+                        placeholder="Phone Number"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Status</p>
+                      <select className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.filterActionDiv}>
+                      <button>Reset</button>
+                      <button>Filter</button>
+                    </div>
                   </Popover.Dropdown>
                 </Popover>
               </Table.Th>
               <Table.Th>
-                <Popover width={200} withArrow shadow="md">
+                <Popover width={270} withArrow shadow="md">
                   <Popover.Target>
                     <div className={styles.tableHeader}>
                       <p>Status</p>
@@ -243,16 +448,58 @@ const UserTable = () => {
                     </div>
                   </Popover.Target>
                   <Popover.Dropdown>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quisquam odit veniam exercitationem, ea saepe debitis
-                      distinctio mollitia doloribus incidunt culpa?
-                    </p>
+                    <div className={styles.popoverDiv}>
+                      <p>Organisation</p>
+                      <select
+                        className={styles.popoverSelect}
+                        // placeholder="
+                        name=""
+                        id=""
+                      ></select>
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Username</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Email</p>
+                      <input
+                        placeholder="Username"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Date</p>
+                      <input className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Phone Number</p>
+                      <input
+                        placeholder="Phone Number"
+                        className={styles.popoverSelect}
+                        name=""
+                        id=""
+                      />
+                    </div>
+                    <div className={styles.popoverDiv}>
+                      <p>Status</p>
+                      <select className={styles.popoverSelect} name="" id="" />
+                    </div>
+                    <div className={styles.filterActionDiv}>
+                      <button>Reset</button>
+                      <button>Filter</button>
+                    </div>
                   </Popover.Dropdown>
                 </Popover>
               </Table.Th>
               <Table.Th />
-              {/* </Table.Th> */}
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>{rows}</Table.Tbody>

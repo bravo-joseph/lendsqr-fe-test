@@ -1,21 +1,23 @@
 .container {
   scroll-behavior: smooth;
+
   // background-color: purple;
 }
 .div {
   width: 100vw;
   height: calc(100vh - 100px);
-
   display: flex;
   overflow-x: hidden;
-  aside {
-    width: 300px;
+  position: relative;
+  aside {    
+    bottom: 0;
+    left: 0;
+    min-width: 280px;
     background-color: white;
-    max-height: 100vh;
-    // overflow-y: scroll;
+    max-height: calc(100vh - 100px);   
   }
   main {
-    width: 100%;
-    // background-color: aquamarine;
+    width: 100%;  
+    overflow-y: scroll;
   }
 }
