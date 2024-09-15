@@ -1,16 +1,29 @@
 .container {
-  // background-color: green;
   padding-left: 2rem;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.8rem;  
+  gap: 0.8rem;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 100%;  
-  margin-bottom: 3px;  
-  color: #213F7D;
+  width: 100%;
+  // margin-bottom: 3px;
+  color: #213f7d;
   // background-color: red;
+}
+.activeContainer {
+  background-color: rgba(57, 205, 205, 0.067);
+  border-left: 5px solid #39cdcc;
+  padding-left: 2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  // margin-bottom: 3px;
+  color: #213f7d;
 }
 .p {
   color: #213f7d;

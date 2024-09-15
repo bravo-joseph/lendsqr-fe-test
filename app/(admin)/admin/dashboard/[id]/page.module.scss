@@ -1,46 +1,98 @@
-.container {
-  padding: 2.5rem;
-}
-.routeBack {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  p {
-    color: #545f7d;
-    font-size: 16px;
-    font-weight: 400;
+@media (min-width: 74em) {
+  .container {
+    padding: 2.5rem;
   }
-}
-.userCallToAction {
-  display: flex;
-  margin-top: 1rem;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  p {
-    font-size: 24px;
-    color: #213f7d;
-    font-weight: 500;
-    // font-family: 'Work Sans';
-  }
-  div{
+  .routeBack {
     display: flex;
+    align-items: center;
     gap: 1rem;
+    p {
+      color: #545f7d;
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
-  button:first-child{
-    border: 2px solid #E4033B;
-    color: #E4033B;
+  .userCallToAction {
+    display: flex;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 24px;
+      color: #213f7d;
+      font-weight: 500;
+      // font-family: 'Work Sans';
+    }
+    div {
+      display: flex;
+      gap: 1rem;
+    }
+    button:first-child {
+      border: 2px solid #e4033b;
+      color: #e4033b;
+    }
+    button {
+      background-color: white;
+      border: 2px solid #39cdcc;
+      padding-inline: 1.3rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-radius: 8px;
+      color: #39cdcc;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+    }
   }
-  button {
-    background-color: white;
-    border: 2px solid #39CDCC;
-    padding-inline: 1.3rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-radius: 8px;
-    color: #39CDCC;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 600;
+}
+@media (max-width: 74.9em) {
+  .container {
+    padding: 2.5rem;
+  }
+  .routeBack {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    p {
+      color: #545f7d;
+      
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  .userCallToAction {
+    display: flex;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 20px;
+      color: #213f7d;
+      font-weight: 500;
+      // font-family: 'Work Sans';
+    }
+    div {
+      display: flex;
+      gap: 1rem;
+    }
+    button:first-child {
+      border: 2px solid #e4033b;
+      color: #e4033b;      
+    }
+    button {
+      background-color: white;
+      border: 2px solid #39cdcc;
+      white-space: nowrap;
+      padding-inline: 1.3rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-radius: 8px;
+      color: #39cdcc;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+    }
   }
 }

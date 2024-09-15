@@ -13,6 +13,7 @@ interface Props {
   iconWidth?: number;
   iconHeight?: number;
   className?: string;
+  leftSection?: React.ReactNode;
   onClick?: () => void;
 }
 
@@ -22,15 +23,21 @@ const NavButton: React.FC<Props> = (props) => {
 
   const path = r.href === '/' ? '' : r.href;
   const href = r.pathPrefix ? `${r.pathPrefix}${path}` : path;
-  const isActive = pathname === href;
+  const isActive = pathname === href || pathname.startsWith(href ?? "a");
+
+  console.log(href)
   return (
     <Link
       href={href ?? ""}
       onClick={onClick}   
-      className={styles.container}  
+      className={isActive ? styles.activeContainer : styles.container}  
+      style={{
+        marginBottom: href === 'admin/switch-organization' ? "200px" : "3px"
+      }}
     >
       {r.icon && r.icon}
       <p className={styles.p}>{children}</p>
+      {r.leftSection && r.leftSection}
     </Link>
   );
 };

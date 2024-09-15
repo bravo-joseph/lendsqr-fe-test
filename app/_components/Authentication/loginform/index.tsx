@@ -1,8 +1,24 @@
-
-import React from "react";
+"use client";
+import React, { useReducer } from "react";
 import styles from "./index.module.scss";
 
+const initialState = {
+  isHidden: false,
+};
+
+function reducer(
+  state: { isHidden: boolean },
+  action: { type: string; payload?: string }
+) {
+  switch (action.type) {
+    case "password/toogle":
+      return { ...state, isHidden: !state.isHidden };
+    default:
+      return state;
+  }
+}
 const LoginForm = () => {
+  const [{ isHidden }, dispatch] = useReducer(reducer, initialState);
   return (
     <div className={styles.container}>
       <section>
@@ -15,8 +31,14 @@ const LoginForm = () => {
             <input placeholder="Email" />
           </div>
           <div>
-            <input placeholder="Password" type="password"/>
-            <span>show</span>
+            <input placeholder="Password" type={`${isHidden ? "password": "text"}`} />
+            <span
+              onClick={() => {
+                dispatch({ type: "password/toogle" });
+              }}
+            >
+              {isHidden ? "show" : "hide"}
+            </span>
           </div>
         </section>
         <section className="submit-section">

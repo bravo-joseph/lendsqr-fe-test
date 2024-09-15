@@ -5,6 +5,22 @@ const ADMIN_NAV_GROUPS: NavGroup[] = [
     name: "",
     routes: [
       {
+        name: "Switch Organization",
+        path: "/switch-organization",
+        icon: "switchOrganizationIcon",
+        leftsection: "switchOrginazationIconDropdown"
+      },  
+      {
+        name: "",
+        path: "/empty-route",
+        icon: "",        
+      },    
+    ],
+  },
+  {
+    name: "",
+    routes: [
+      {
         name: "Dashboard",
         path: "/dashboard",
         icon: "dashboardIcon",

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaRegHandshake } from "react-icons/fa";
 
 interface Props {
-  id: NavIcon;
+  id?: NavIcon;
 }
 
 const NavigaitonIcon: React.FC<Props> = ({ id }) => {
@@ -220,7 +220,26 @@ const NavigaitonIcon: React.FC<Props> = ({ id }) => {
           width={20}
           height={17}
         />
-      );    
+      );
+    case "switchOrganizationIcon":
+      return (
+        <Image
+          src="/images/icons/switchOrganizationIcon.png"
+          alt=""
+          width={20}
+          height={17}
+        />
+      );
+      case "switchOrginazationIconDropdown":
+      return (
+        <Image
+          src="/images/icons/switchOrginazationIconDropdown.png"
+          alt=""
+          width={14}
+          height={14}          
+        />
+      );
+    // switchOrganizationIcon
     default:
       return null;
   }

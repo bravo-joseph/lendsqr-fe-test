@@ -27,11 +27,15 @@ export type NavIcon =
   | "userscardIcon"
   | "activeUsersIcon"
   | "userswithLoanIcon"
-  | "userswithsavingsIcon";
+  | "userswithsavingsIcon"
+  | "switchOrganizationIcon"
+  | "switchOrginazationIconDropdown"
+  | "";
   
 
 export interface NavRoute {
   name: string;
   path: string;
   icon: NavIcon;
+  leftsection?: NavIcon;
 }

@@ -11,7 +11,7 @@ const AdminShellWithNavigation: React.FC<Props> = ({
 }) => {
   return (
     <div>
-      <AdminTopMenuBar />
+      <AdminTopMenuBar navigation={navigation}/>
       <div className={styles.div}>
         <aside>{navigation}</aside>
         <main>          

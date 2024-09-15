@@ -123,387 +123,419 @@ const UserTable = () => {
   return (
     <>
       <div className={styles.container}>
-        <Table
-          styles={{
-            td: {
-              paddingTop: "1rem",
-              paddingBottom: "1rem",
-              borderBottom: "1px solid #213F7D1A",
-              color: "#545F7D",
-              fontSize: "14px",
-              fontWeight: "500",
-            },
-          }}
-          withRowBorders={false}
-          withColumnBorders={false}
-        >
-          <Table.Thead>
-            <Table.Tr>
-              <Table.Th>
-                <Popover width={270} withArrow shadow="md">
-                  <Popover.Target>
-                    <div className={styles.tableHeader}>
-                      <p>Organization</p>
-                      <IoFilter />
-                    </div>
-                  </Popover.Target>
-                  <Popover.Dropdown>
-                    <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
-                      <select
-                        className={styles.popoverSelect}
-                        // placeholder="
-                        name=""
-                        id=""
-                      ></select>
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Username</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Email</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Date</p>
-                      <input className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Phone Number</p>
-                      <input
-                        placeholder="Phone Number"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Status</p>
-                      <select className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.filterActionDiv}>
-                      <button>Reset</button>
-                      <button>Filter</button>
-                    </div>
-                  </Popover.Dropdown>
-                </Popover>
-              </Table.Th>
-              <Table.Th>
-                <Popover width={270} withArrow shadow="md">
-                  <Popover.Target>
-                    <div className={styles.tableHeader}>
-                      <p>Username</p>
-                      <IoFilter />
-                    </div>
-                  </Popover.Target>
-                  <Popover.Dropdown>
-                    <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
-                      <select
-                        className={styles.popoverSelect}
-                        // placeholder="
-                        name=""
-                        id=""
-                      ></select>
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Username</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Email</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Date</p>
-                      <input className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Phone Number</p>
-                      <input
-                        placeholder="Phone Number"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Status</p>
-                      <select className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.filterActionDiv}>
-                      <button>Reset</button>
-                      <button>Filter</button>
-                    </div>
-                  </Popover.Dropdown>
-                </Popover>
-              </Table.Th>
-              <Table.Th>
-                <Popover width={270} withArrow shadow="md">
-                  <Popover.Target>
-                    <div className={styles.tableHeader}>
-                      <p>Email</p>
-                      <IoFilter />
-                    </div>
-                  </Popover.Target>
-                  <Popover.Dropdown>
-                    <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
-                      <select
-                        className={styles.popoverSelect}
-                        // placeholder="
-                        name=""
-                        id=""
-                      ></select>
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Username</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Email</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Date</p>
-                      <input className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Phone Number</p>
-                      <input
-                        placeholder="Phone Number"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Status</p>
-                      <select className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.filterActionDiv}>
-                      <button>Reset</button>
-                      <button>Filter</button>
-                    </div>
-                  </Popover.Dropdown>
-                </Popover>
-              </Table.Th>
-              <Table.Th>
-                <Popover width={270} withArrow shadow="md">
-                  <Popover.Target>
-                    <div className={styles.tableHeader}>
-                      <p>Phone Number</p>
-                      <IoFilter />
-                    </div>
-                  </Popover.Target>
-                  <Popover.Dropdown>
-                    <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
-                      <select
-                        className={styles.popoverSelect}
-                        // placeholder="
-                        name=""
-                        id=""
-                      ></select>
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Username</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Email</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Date</p>
-                      <input className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Phone Number</p>
-                      <input
-                        placeholder="Phone Number"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Status</p>
-                      <select className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.filterActionDiv}>
-                      <button>Reset</button>
-                      <button>Filter</button>
-                    </div>
-                  </Popover.Dropdown>
-                </Popover>
-              </Table.Th>
-              <Table.Th>
-                <Popover width={270} withArrow shadow="md">
-                  <Popover.Target>
-                    <div className={styles.tableHeader}>
-                      <p>Date Joined</p>
-                      <IoFilter />
-                    </div>
-                  </Popover.Target>
-                  <Popover.Dropdown>
-                    <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
-                      <select
-                        className={styles.popoverSelect}
-                        // placeholder="
-                        name=""
-                        id=""
-                      ></select>
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Username</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Email</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Date</p>
-                      <input className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Phone Number</p>
-                      <input
-                        placeholder="Phone Number"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Status</p>
-                      <select className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.filterActionDiv}>
-                      <button>Reset</button>
-                      <button>Filter</button>
-                    </div>
-                  </Popover.Dropdown>
-                </Popover>
-              </Table.Th>
-              <Table.Th>
-                <Popover width={270} withArrow shadow="md">
-                  <Popover.Target>
-                    <div className={styles.tableHeader}>
-                      <p>Status</p>
-                      <IoFilter />
-                    </div>
-                  </Popover.Target>
-                  <Popover.Dropdown>
-                    <div className={styles.popoverDiv}>
-                      <p>Organisation</p>
-                      <select
-                        className={styles.popoverSelect}
-                        // placeholder="
-                        name=""
-                        id=""
-                      ></select>
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Username</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Email</p>
-                      <input
-                        placeholder="Username"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Date</p>
-                      <input className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Phone Number</p>
-                      <input
-                        placeholder="Phone Number"
-                        className={styles.popoverSelect}
-                        name=""
-                        id=""
-                      />
-                    </div>
-                    <div className={styles.popoverDiv}>
-                      <p>Status</p>
-                      <select className={styles.popoverSelect} name="" id="" />
-                    </div>
-                    <div className={styles.filterActionDiv}>
-                      <button>Reset</button>
-                      <button>Filter</button>
-                    </div>
-                  </Popover.Dropdown>
-                </Popover>
-              </Table.Th>
-              <Table.Th />
-            </Table.Tr>
-          </Table.Thead>
-          <Table.Tbody>{rows}</Table.Tbody>
-        </Table>
+        <Table.ScrollContainer minWidth={500}>
+          <Table
+            styles={{
+              td: {
+                paddingTop: "1rem",
+                paddingBottom: "1rem",
+                borderBottom: "1px solid #213F7D1A",
+                color: "#545F7D",
+                fontSize: "14px",
+                fontWeight: "500",
+              },
+            }}
+            withRowBorders={false}
+            withColumnBorders={false}
+          >
+            <Table.Thead>
+              <Table.Tr>
+                <Table.Th>
+                  <Popover width={270} withArrow shadow="md">
+                    <Popover.Target>
+                      <div className={styles.tableHeader}>
+                        <p>Organization</p>
+                        <IoFilter />
+                      </div>
+                    </Popover.Target>
+                    <Popover.Dropdown>
+                      <div className={styles.popoverDiv}>
+                        <p>Organisation</p>
+                        <select
+                          className={styles.popoverSelect}
+                          // placeholder="
+                          name=""
+                          id=""
+                        ></select>
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Username</p>
+                        <input
+                          placeholder="Username"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Email</p>
+                        <input
+                          placeholder="Email"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Date</p>
+                        <input className={styles.popoverSelect} name="" id="" />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
+                          type="date"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.filterActionDiv}>
+                        <button>Reset</button>
+                        <button>Filter</button>
+                      </div>
+                    </Popover.Dropdown>
+                  </Popover>
+                </Table.Th>
+                <Table.Th>
+                  <Popover width={270} withArrow shadow="md">
+                    <Popover.Target>
+                      <div className={styles.tableHeader}>
+                        <p>Username</p>
+                        <IoFilter />
+                      </div>
+                    </Popover.Target>
+                    <Popover.Dropdown>
+                      <div className={styles.popoverDiv}>
+                        <p>Organisation</p>
+                        <select
+                          className={styles.popoverSelect}
+                          // placeholder="
+                          name=""
+                          id=""
+                        ></select>
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Username</p>
+                        <input
+                          placeholder="Username"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Email</p>
+                        <input
+                          placeholder="Email"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Date</p>
+                        <input className={styles.popoverSelect} name="" id="" />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
+                          type="date"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.filterActionDiv}>
+                        <button>Reset</button>
+                        <button>Filter</button>
+                      </div>
+                    </Popover.Dropdown>
+                  </Popover>
+                </Table.Th>
+                <Table.Th>
+                  <Popover width={270} withArrow shadow="md">
+                    <Popover.Target>
+                      <div className={styles.tableHeader}>
+                        <p>Email</p>
+                        <IoFilter />
+                      </div>
+                    </Popover.Target>
+                    <Popover.Dropdown>
+                      <div className={styles.popoverDiv}>
+                        <p>Organisation</p>
+                        <select
+                          className={styles.popoverSelect}
+                          // placeholder="
+                          name=""
+                          id=""
+                        ></select>
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Username</p>
+                        <input
+                          placeholder="Username"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Email</p>
+                        <input
+                          placeholder="Email"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Date</p>
+                        <input className={styles.popoverSelect} name="" id="" />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
+                          type="date"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.filterActionDiv}>
+                        <button>Reset</button>
+                        <button>Filter</button>
+                      </div>
+                    </Popover.Dropdown>
+                  </Popover>
+                </Table.Th>
+                <Table.Th>
+                  <Popover width={270} withArrow shadow="md">
+                    <Popover.Target>
+                      <div className={styles.tableHeader}>
+                        <p>Phone Number</p>
+                        <IoFilter />
+                      </div>
+                    </Popover.Target>
+                    <Popover.Dropdown>
+                      <div className={styles.popoverDiv}>
+                        <p>Organisation</p>
+                        <select
+                          className={styles.popoverSelect}
+                          // placeholder="
+                          name=""
+                          id=""
+                        ></select>
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Username</p>
+                        <input
+                          placeholder="Username"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Email</p>
+                        <input
+                          placeholder="Email"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Date</p>
+                        <input className={styles.popoverSelect} name="" id="" />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
+                          type="date"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.filterActionDiv}>
+                        <button>Reset</button>
+                        <button>Filter</button>
+                      </div>
+                    </Popover.Dropdown>
+                  </Popover>
+                </Table.Th>
+                <Table.Th>
+                  <Popover width={270} withArrow shadow="md">
+                    <Popover.Target>
+                      <div className={styles.tableHeader}>
+                        <p>Date Joined</p>
+                        <IoFilter />
+                      </div>
+                    </Popover.Target>
+                    <Popover.Dropdown>
+                      <div className={styles.popoverDiv}>
+                        <p>Organisation</p>
+                        <select
+                          className={styles.popoverSelect}
+                          // placeholder="
+                          name=""
+                          id=""
+                        ></select>
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Username</p>
+                        <input
+                          placeholder="Username"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Email</p>
+                        <input
+                          placeholder="Email"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Date</p>
+                        <input className={styles.popoverSelect} name="" id="" />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
+                          type="date"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.filterActionDiv}>
+                        <button>Reset</button>
+                        <button>Filter</button>
+                      </div>
+                    </Popover.Dropdown>
+                  </Popover>
+                </Table.Th>
+                <Table.Th>
+                  <Popover width={270} withArrow shadow="md">
+                    <Popover.Target>
+                      <div className={styles.tableHeader}>
+                        <p>Status</p>
+                        <IoFilter />
+                      </div>
+                    </Popover.Target>
+                    <Popover.Dropdown>
+                      <div className={styles.popoverDiv}>
+                        <p>Organisation</p>
+                        <select
+                          className={styles.popoverSelect}
+                          // placeholder="
+                          name=""
+                          id=""
+                        ></select>
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Username</p>
+                        <input
+                          placeholder="Username"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Email</p>
+                        <input
+                          placeholder="Email"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Date</p>
+                        <input className={styles.popoverSelect} name="" id="" />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
+                          type="date"
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select
+                          className={styles.popoverSelect}
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div className={styles.filterActionDiv}>
+                        <button>Reset</button>
+                        <button>Filter</button>
+                      </div>
+                    </Popover.Dropdown>
+                  </Popover>
+                </Table.Th>
+                <Table.Th />
+              </Table.Tr>
+            </Table.Thead>
+            <Table.Tbody>{rows}</Table.Tbody>
+          </Table>
+        </Table.ScrollContainer>
       </div>
       <section className={styles.sectionContainer}>
         <div>

@@ -22,12 +22,13 @@ const AdminNavigationList: React.FC<Props> = ({ navGroups, prefix }) => {
           <li key={group.name}>
             <p className={styles.headText}>{group.name}</p>
             <ul>
-              {group.routes.map(({ icon, ...r }) => (
+              {group.routes.map(({ icon, leftsection, ...r }) => (
                 <li key={r.name}>
                   <NavButton
                     onClick={toggle}
                     pathPrefix={prefix}
                     icon={<NavigaitonIcon id={icon} />}
+                    leftSection={<NavigaitonIcon id={leftsection} />}
                     href={r.path}
                   >
                     {r.name}

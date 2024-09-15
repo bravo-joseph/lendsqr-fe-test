@@ -1,52 +1,175 @@
-$textcolor: #213F7D;
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  // background-color: white;  
-  // background-color: purple;
-  z-index: 2;
-  height: 100px;
-  // box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.4);
-  box-shadow: 3px 3px 30px 3px #11091E14;
-  align-items: center;
-  padding-inline: 2rem;
-  div {
-    display: flex;
-    gap: 10rem;
-    align-items: center;    
-    // width: 100%;
-    // background-color: red;
+$textcolor: #213f7d;
+@media (max-width: 74.9em) {
+  .imge {
+    display: block;
+    width: 144px;
+    height: 30px;
+    margin-bottom: 1rem;
   }
- 
-}
-.img {
-  display: block;
-  width: 144px;
-  height: 30px;
-}
-.section {
-  justify-self: self-end;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;  
-  gap: 1.5rem ;
-  div {
+  .container {
+    max-width: 100%;
+    min-width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    height: 100px;
+    box-shadow: 3px 3px 30px 3px #11091e14;
+    align-items: center;
+    padding-inline: 1rem;
+
+    div {
+      display: flex;
+      gap: 10rem;
+      align-items: center;
+    }
+  }
+
+  .img {
+    display: none;
+    width: 144px;
+    height: 30px;
+  }
+
+  .section {
+    justify-self: self-end;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    p{
-      font-weight: 500;
-      color: $textcolor;
-      text-decoration: none;
+    justify-content: space-between;
+    gap: 1rem;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      p {
+        font-weight: 500;
+        color: $textcolor;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        border-radius: 50%;
+      }
     }
-    img {
-      display: block;
-      border-radius: 50%;
+  }
+
+  .searchInput {
+    display: none;
+    input {
+      display: none;
     }
-  }  
-  p {
-    text-decoration: underline;
-    color: $textcolor
+    div {
+      min-width: 50px;
+      background-color: #39cdcc;
+      height: inherit;
+      display: none;
+      place-content: center;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+  .docsTypography {
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 0.001rem;
+    border-bottom: 2px solid #213f7d;
+    display: none;
+    color: $textcolor;
+  }
+  .burger{
+    display: block;
+  }
+}
+@media (min-width: 74.9em) {  
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    height: 100px;
+    box-shadow: 3px 3px 30px 3px #11091e14;
+    align-items: center;
+    padding-inline: 2rem;
+
+    div {
+      display: flex;
+      gap: 10rem;
+      align-items: center;
+    }
+  }
+  
+  .img {
+    display: block;
+    width: 144px;
+    height: 30px;
+  }
+  .burger {
+    display: none;
+    // background-color: red;
+  }
+  .section {
+    justify-self: self-end;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      p {
+        font-weight: 500;
+        color: $textcolor;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .searchInput {
+    height: 40px;
+    min-width: 400px;
+    max-width: 400px;
+    border: 2px solid rgba(33, 64, 125, 0.212);
+    display: flex;
+    border-radius: 8px;
+    border-right: none;
+
+    input {
+      width: 100%;
+      color: hsla(220, 58%, 31%, 0.708);
+      // height: inherit;
+      padding-inline: 1rem;
+      border: none;
+      font-size: 14px;
+      outline: none;
+    }
+
+    div {
+      min-width: 50px;
+      background-color: #39cdcc;
+      height: inherit;
+      display: grid;
+      place-content: center;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+
+  .docsTypography {
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 0.001rem;
+    border-bottom: 2px solid #213f7d;
+    color: $textcolor;
   }
 }
