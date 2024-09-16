@@ -57,12 +57,17 @@ const UserTable: React.FC<Props> = ({
             </div>
           </Popover.Target>
           <Popover.Dropdown>
-            <div className={styles.userElipsePopover}>
+            <div
+              className={styles.userElipsePopover}
+              style={{
+                cursor: "pointer",
+              }}
+            >
               <FaRegEye />
               <p
                 onClick={() => {
                   router.replace(
-                    `/admin/users/${element.personalInformation.email}`
+                    `/admin/users/${element.personalInformation.bvn}`
                   );
                 }}
               >
@@ -113,12 +118,12 @@ const UserTable: React.FC<Props> = ({
                     <Popover.Dropdown>
                       <div className={styles.popoverDiv}>
                         <p>Organisation</p>
-                        <select
+                        <input
+                          placeholder="Organization"
                           className={styles.popoverSelect}
-                          // placeholder="
                           name=""
                           id=""
-                        ></select>
+                        />
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Username</p>
@@ -183,12 +188,12 @@ const UserTable: React.FC<Props> = ({
                     <Popover.Dropdown>
                       <div className={styles.popoverDiv}>
                         <p>Organisation</p>
-                        <select
+                        <input
+                          placeholder="Organization"
                           className={styles.popoverSelect}
-                          // placeholder="
                           name=""
                           id=""
-                        ></select>
+                        />
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Username</p>
@@ -253,12 +258,12 @@ const UserTable: React.FC<Props> = ({
                     <Popover.Dropdown>
                       <div className={styles.popoverDiv}>
                         <p>Organisation</p>
-                        <select
+                        <input
+                          placeholder="Organization"
                           className={styles.popoverSelect}
-                          // placeholder="
                           name=""
                           id=""
-                        ></select>
+                        />
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Username</p>
@@ -323,12 +328,12 @@ const UserTable: React.FC<Props> = ({
                     <Popover.Dropdown>
                       <div className={styles.popoverDiv}>
                         <p>Organisation</p>
-                        <select
+                        <input
+                          placeholder="Organization"
                           className={styles.popoverSelect}
-                          // placeholder="
                           name=""
                           id=""
-                        ></select>
+                        />
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Username</p>
@@ -393,12 +398,12 @@ const UserTable: React.FC<Props> = ({
                     <Popover.Dropdown>
                       <div className={styles.popoverDiv}>
                         <p>Organisation</p>
-                        <select
+                        <input
+                          placeholder="Organization"
                           className={styles.popoverSelect}
-                          // placeholder="
                           name=""
                           id=""
-                        ></select>
+                        />
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Username</p>
@@ -459,12 +464,12 @@ const UserTable: React.FC<Props> = ({
                     <Popover.Dropdown>
                       <div className={styles.popoverDiv}>
                         <p>Organisation</p>
-                        <select
+                        <input
+                          placeholder="Organization"
                           className={styles.popoverSelect}
-                          // placeholder="
                           name=""
                           id=""
-                        ></select>
+                        />
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Username</p>
@@ -536,7 +541,7 @@ const UserTable: React.FC<Props> = ({
         <div>
           <p className={styles.leftPagination}>Showing</p>
           <div className={styles.sizeSelect}>
-            <p>10</p>            
+            <p>10</p>
             <FaAngleDown />
           </div>
           <p className={styles.leftPagination}>out of 100</p>

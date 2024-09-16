@@ -23,9 +23,8 @@ const NavButton: React.FC<Props> = (props) => {
 
   const path = r.href === '/' ? '' : r.href;
   const href = r.pathPrefix ? `${r.pathPrefix}${path}` : path;
-  const isActive = pathname === href || pathname.startsWith(href ?? "a");
+  const isActive = pathname === href || pathname.startsWith(href ?? "unrouted");
 
-  console.log(href)
   return (
     <Link
       href={href ?? ""}

@@ -34,7 +34,7 @@ export interface User {
     fullName: string;
     phoneNumber: string;
     emailAddress: string;
-    relationship: string;
+    relationShip: string;
   };
 }
 

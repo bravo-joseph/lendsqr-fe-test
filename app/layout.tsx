@@ -4,7 +4,8 @@ import "@mantine/core/styles.css";
 import { Work_Sans } from "@next/font/google";
 import { createTheme, MantineProvider } from "@mantine/core";
 import "./globals.scss";
-import ReactQueryProvider from "./_providers";
+import ReactQueryProvider from "./_providers/reactquery-providers";
+import { GlobalProvider } from "./_providers/context-providers";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -68,7 +69,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${worksans.className} antialiased`}>
         <ReactQueryProvider>
-          <MantineProvider theme={theme}>{children}</MantineProvider>
+          <GlobalProvider>
+            <MantineProvider theme={theme}>{children}</MantineProvider>
+          </GlobalProvider>
         </ReactQueryProvider>
       </body>
     </html>

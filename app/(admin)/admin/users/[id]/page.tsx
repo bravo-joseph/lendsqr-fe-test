@@ -14,7 +14,7 @@ const UserDetailsPage = () => {
       <div
         className={styles.routeBack}
         onClick={() => {
-          router.back();
+          router.replace("/admin/users");
         }}
       >
         <Icon icon="teenyicons:arrow-left-solid" fontSize={"24px"} />

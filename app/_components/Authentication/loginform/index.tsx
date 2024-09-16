@@ -27,13 +27,16 @@ const LoginForm = () => {
         <p>Welcome!</p>
         <span>Enter details to login</span>
       </section>
-      <form>
+      <form method="post">
         <section>
           <div>
             <input placeholder="Email" />
           </div>
           <div>
-            <input placeholder="Password" type={`${isHidden ? "password": "text"}`} />
+            <input
+              placeholder="Password"
+              type={`${isHidden ? "password" : "text"}`}
+            />
             <span
               onClick={() => {
                 dispatch({ type: "password/toogle" });
@@ -45,7 +48,14 @@ const LoginForm = () => {
         </section>
         <section className="submit-section">
           <p>Forgot Password?</p>
-          <button className="bg-purple-500" onClick={() => {router.replace("/admin/users")}}>Log In</button>
+          <button
+            type="button"
+            onClick={() => {            
+              router.replace("/admin/users");
+            }}
+          >
+            Log In
+          </button>
         </section>
       </form>
     </div>

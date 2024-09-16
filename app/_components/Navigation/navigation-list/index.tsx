@@ -8,6 +8,7 @@ import { useDisclosure } from "@mantine/hooks";
 import NavigaitonIcon from "../navigation-icons";
 import styles from "./index.module.scss";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface Props {
   navGroups: NavGroup[];
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const AdminNavigationList: React.FC<Props> = ({ navGroups, prefix }) => {
+  const router = useRouter();
   const [, { toggle }] = useDisclosure();
   return (
     <div className={styles.container}>
@@ -22,9 +24,11 @@ const AdminNavigationList: React.FC<Props> = ({ navGroups, prefix }) => {
         {navGroups.map((group) => (
           <li key={group.name}>
             <p className={styles.headText}>{group.name}</p>
-            <ul style={{
-              marginBottom: "20px"
-            }}>
+            <ul
+              style={{
+                marginBottom: "20px",
+              }}
+            >
               {group.routes.map(({ icon, leftsection, ...r }) => (
                 <li key={r.name}>
                   <NavButton
@@ -45,16 +49,24 @@ const AdminNavigationList: React.FC<Props> = ({ navGroups, prefix }) => {
       <div
         style={{
           width: "100%",
-          borderTop: "2px solid rgba(33, 64, 125, 0.105)",   
+          borderTop: "2px solid rgba(33, 64, 125, 0.105)",
           padding: "2rem",
           marginTop: "2rem",
           display: "flex",
           gap: "1rem",
           alignItems: "center",
-          color: "#213F7D"
+          color: "#213F7D",
+        }}
+        onClick={() => {
+          router.replace("/auth/login");
         }}
       >
-        <Image src="/images/icons/logoutIcon.png" width={16} height={16} alt="logour" />
+        <Image
+          src="/images/icons/logoutIcon.png"
+          width={16}
+          height={16}
+          alt="logour"
+        />
         Logout
       </div>
     </div>

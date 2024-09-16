@@ -1,122 +1,139 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import { Rating } from "@mantine/core";
+import { Icon } from "@iconify/react/dist/iconify.js"; // Icon component from Iconify library
+import { Rating } from "@mantine/core"; // Rating component from Mantine library for star ratings
+import { useUsersContext } from "@/app/_providers/context-providers"; // Custom context to fetch users data
+import { useParams } from "next/navigation"; // Hook to access URL parameters
 
 const UserInformation = () => {
+  // Fetching user data from the context
+  const { users } = useUsersContext();
+  
+  // Fetching the user ID from the URL parameters
+  const { id } = useParams();
+
+  // Finding the user data based on the BVN (Bank Verification Number) in the URL
+  const userData = users?.data.data.find(
+    (details) => details.personalInformation.bvn === id
+  );
+  console.log(userData); // For debugging purposes, log the user data
+
+  // Structuring user bio data to display in the UI
   const userbiodata = [
     {
-      name: "Personal Information",
+      name: "Personal Information", // Section title
       fields: [
         {
-          title: "Full Name",
-          value: "Grace Effon",
+          title: "Full Name", // Field label
+          value: `${userData?.personalInformation.fullName}`, // Field value from user data
         },
         {
           title: "Phone Number",
-          value: "07062475090",
+          value: `${userData?.personalInformation.phoneNumber}`,
         },
         {
           title: "Email Address",
-          value: "grace@gmail.com",
+          value: `${userData?.personalInformation.email}`,
         },
         {
           title: "BVN",
-          value: "94592329412",
+          value: `${userData?.personalInformation.bvn}`,
         },
         {
           title: "Gender",
-          value: "Male",
+          value: `${userData?.personalInformation.gender}`,
         },
         {
           title: "Marital Status",
-          value: "Single",
+          value: `${userData?.personalInformation.maritalStatus}`,
         },
         {
-          title: "Children",
+          title: "Children", // Hardcoded value, can be dynamic if needed
           value: "5",
         },
         {
-          title: "Type of Residence",
+          title: "Type of Residence", // Hardcoded value, can be dynamic if needed
           value: "Parent's Apartment",
-        }
+        },
       ],
     },
     {
-      name: "Education and Employement",
+      name: "Education and Employment", // Section title for education and employment details
       fields: [
         {
           title: "Level of Education",
-          value: "Grace Effon",
+          value: `${userData?.educationInformation.levelOfEducation}`,
         },
         {
-          title: "Employement Status",
-          value: "07062475090",
+          title: "Employment Status",
+          value: `${userData?.educationInformation.employmentStatus}`,
         },
         {
           title: "Sector of Employment",
-          value: "grace@gmail.com",
+          value: `${userData?.educationInformation.sectorOfEmployment}`,
         },
         {
           title: "Duration of Employment",
-          value: "94592329412",
+          value: `${userData?.educationInformation.durationOfEmployment}`,
         },
         {
           title: "Office Email",
-          value: "Male",
+          value: `${userData?.educationInformation.officeEmail}`,
         },
         {
-          title: "Monthly Income",
+          title: "Monthly Income", // Hardcoded value, can be dynamic if needed
           value: "Single",
         },
         {
-          title: "Loan Repayment",
+          title: "Loan Repayment", // Hardcoded value, can be dynamic if needed
           value: "5",
-        },        
+        },
       ],
     },
     {
-      name: "Socials",
+      name: "Socials", // Section title for social media details
       fields: [
         {
           title: "Twitter",
-          value: "@grace_effiom",
+          value: `${userData?.socials.twitter}`,
         },
         {
-          title: "Face Book",
-          value: "Grace Effiom",
+          title: "Facebook",
+          value: `${userData?.socials.facebook}`,
         },
         {
           title: "Instagram",
-          value: "@grace_effiom",
-        },               
+          value: `${userData?.socials.instagram}`,
+        },
       ],
     },
     {
-      name: "Guarantor",
+      name: "Guarantor", // Section title for the user's guarantor details
       fields: [
         {
           title: "Full Name",
-          value: "Debby Onaga",
+          value: `${userData?.guarantor.fullName}`,
         },
         {
           title: "Phone Number",
-          value: "07045239512",
+          value: `${userData?.guarantor.phoneNumber}`,
         },
         {
           title: "Email Address",
-          value: "debby@gmail.com",
-        },   
+          value: `${userData?.guarantor.emailAddress}`,
+        },
         {
-          title: "RelationShip",
-          value: "Sister",
-        },             
+          title: "Relationship",
+          value: `${userData?.guarantor.relationShip}`,
+        },
       ],
     },
   ];
+
   return (
     <div className={styles.container}>
       <div className={styles.firstSection}>
+        {/* Section to display user profile information */}
         <section
           style={{
             width: "100%",
@@ -125,18 +142,25 @@ const UserInformation = () => {
             gap: "1.1rem",
           }}
         >
+          {/* User profile image or placeholder */}
           <div className={styles.userImage}>
             <Icon icon="octicon:person-24" color="#213F7D" fontSize={"30px"} />
           </div>
+          
+          {/* User basic information: name, organization, rating, and bank details */}
           <div className={styles.userInfofsection}>
             <section className={styles.userName}>
-              <p>Grace Effiom</p>
-              <p>LSQFf587g90</p>
+              <p>{userData?.personalInformation.fullName}</p>
+              <p>{userData?.personalInformation.orgainzarionName}</p>
             </section>
+
+            {/* User rating information */}
             <section className={styles.userSection2}>
               <p>User&apos;s ties</p>
-              <Rating count={3} defaultValue={1} />
+              <Rating count={3} defaultValue={1} /> {/* Star rating for user's ties */}
             </section>
+
+            {/* User financial details */}
             <section>
               <p
                 style={{
@@ -145,12 +169,14 @@ const UserInformation = () => {
                   color: "#213F7D",
                 }}
               >
-                &#8358;200,000
+                &#8358;200,000 {/* Hardcoded value for balance */}
               </p>
-              <p className={styles.userBankDetails}>9912345678/Providus Bank</p>
+              <p className={styles.userBankDetails}>9912345678/Providus Bank</p> {/* Bank details */}
             </section>
           </div>
         </section>
+
+        {/* Navigation section for different user details */}
         <section className={styles.secondSection}>
           <p>General Details</p>
           <p>Documents</p>
@@ -160,16 +186,18 @@ const UserInformation = () => {
           <p>App and Systems</p>
         </section>
       </div>
+
+      {/* User biodata section, dynamically displaying details */}
       <div className={styles.UserBioData}>
         {userbiodata.map((userbio) => {
           return (
             <div className={styles.biodata} key={userbio.name}>
-              <p className={styles.biodataname}>{userbio.name}</p>
+              <p className={styles.biodataname}>{userbio.name}</p> {/* Section heading */}
               <div className={styles.biodataContaier}>
                 {userbio.fields.map((biodata) => (
                   <div key={biodata.title}>
-                    <p className={styles.biodataTitle}>{biodata.title}</p>
-                    <p className={styles.biodataValue}>{biodata.value}</p>
+                    <p className={styles.biodataTitle}>{biodata.title}</p> {/* Field label */}
+                    <p className={styles.biodataValue}>{biodata.value}</p> {/* Field value */}
                   </div>
                 ))}
               </div>
