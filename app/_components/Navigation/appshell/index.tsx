@@ -11,12 +11,10 @@ const AdminShellWithNavigation: React.FC<Props> = ({
 }) => {
   return (
     <div>
-      <AdminTopMenuBar navigation={navigation}/>
+      <AdminTopMenuBar navigation={navigation} />
       <div className={styles.div}>
         <aside>{navigation}</aside>
-        <main>          
-          {children}
-        </main>
+        <main>{children}</main>
       </div>
     </div>
   );
