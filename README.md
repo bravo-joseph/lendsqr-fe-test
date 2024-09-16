@@ -66,7 +66,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/<your-username>/lendsqr-fe-test.git
+git clone https://github.com/bravo-joseph/lendsqr-fe-test.git
 Install dependencies:
 
 bash
