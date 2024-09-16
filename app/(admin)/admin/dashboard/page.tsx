@@ -1,9 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./page.module.scss";
 import UserInformationCards from "@/app/_components/Users/user-informationcards";
 import NavigaitonIcon from "@/app/_components/Navigation/navigation-icons";
 import UserTable from "@/app/_components/Users/user-table";
+import { useQuery } from "@tanstack/react-query";
+import { v1getAllUsers } from "@/app/services/version1/queries";
+import ADMINQUERYKEYS from "@/app/services/version1/querykeys";
 
 interface CardType {
   icon: React.ReactNode;
@@ -51,7 +54,27 @@ const UserDetails: CardType[] = [
   },
 ];
 
-const page = () => {
+const UsersList = () => {
+  const [pageSize] = useState<number>(10);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const { data, isLoading } = useQuery({
+    queryFn: v1getAllUsers,
+    queryKey: [ADMINQUERYKEYS.USERS],   
+  });
+  // Calculate the start and end indices for the current page
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+
+  const paginatedData = data?.data.data.slice(startIndex, endIndex) ?? [];
+
+    // Handle page change
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+  };
+  // Total pages
+  const totalPages = Math.ceil((data?.data.data.length ?? 0) / pageSize);
+
   return (
     <div className={styles.container}>
       <p className={styles.headerText}>Users</p>
@@ -60,9 +83,11 @@ const page = () => {
           return <UserInformationCards data={user} key={user.title} />;
         })}
       </section>
-      <UserTable />
+      <UserTable data={paginatedData} isloading={isLoading} handlePageChange={handlePageChange} totalPages={totalPages}/>
     </div>
   );
 };
 
-export default page;
+export default UsersList;
+
+

@@ -9,12 +9,7 @@ const ADMIN_NAV_GROUPS: NavGroup[] = [
         path: "/switch-organization",
         icon: "switchOrganizationIcon",
         leftsection: "switchOrginazationIconDropdown"
-      },  
-      {
-        name: "",
-        path: "/empty-route",
-        icon: "",        
-      },    
+      },         
     ],
   },
   {
@@ -139,6 +134,11 @@ const ADMIN_NAV_GROUPS: NavGroup[] = [
         name: "Audit Logs",
         path: "/preferences",
         icon: "auditLogsIcon",
+      },
+      {
+        name: "Systems Messages",
+        path: "/messages",
+        icon: "systemsMessagesIcon",
       },
     ],
   },  

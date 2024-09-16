@@ -230,16 +230,26 @@ const NavigaitonIcon: React.FC<Props> = ({ id }) => {
           height={17}
         />
       );
-      case "switchOrginazationIconDropdown":
+    case "switchOrginazationIconDropdown":
       return (
         <Image
           src="/images/icons/switchOrginazationIconDropdown.png"
           alt=""
           width={14}
-          height={14}          
+          height={14}
+        />
+      );
+    case "systemsMessagesIcon":
+      return (
+        <Image
+          src="/images/icons/systemsMessagesIcon.png"
+          alt=""
+          width={14}
+          height={14}
         />
       );
     // switchOrganizationIcon
+    // systemsMessagesIcon
     default:
       return null;
   }

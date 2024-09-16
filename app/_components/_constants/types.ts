@@ -30,7 +30,7 @@ export type NavIcon =
   | "userswithsavingsIcon"
   | "switchOrganizationIcon"
   | "switchOrginazationIconDropdown"
-  | "";
+  | "systemsMessagesIcon";
   
 
 export interface NavRoute {

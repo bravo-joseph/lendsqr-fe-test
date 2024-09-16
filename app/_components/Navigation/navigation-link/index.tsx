@@ -32,7 +32,7 @@ const NavButton: React.FC<Props> = (props) => {
       onClick={onClick}   
       className={isActive ? styles.activeContainer : styles.container}  
       style={{
-        marginBottom: href === 'admin/switch-organization' ? "200px" : "3px"
+        marginBottom: (href === '/admin/dashboard' || href === "/admin/switch-organization") ? "30px" : ""
       }}
     >
       {r.icon && r.icon}

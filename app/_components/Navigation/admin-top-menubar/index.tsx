@@ -26,7 +26,6 @@ const AdminTopMenuBar: React.FC<Props> = ({ navigation }) => {
             />
           </div>
         )}
-
         <div className={styles.searchInput}>
           <input type="text" placeholder="Search for anything" />
           <div>

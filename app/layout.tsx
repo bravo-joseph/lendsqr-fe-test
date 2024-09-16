@@ -1,9 +1,10 @@
 // import type { Metadata } from "next";
-import '@mantine/core/styles.css';
+import "@mantine/core/styles.css";
 // import localFont from "next/font/local";
-import { Work_Sans } from '@next/font/google';
+import { Work_Sans } from "@next/font/google";
 import { createTheme, MantineProvider } from "@mantine/core";
 import "./globals.scss";
+import ReactQueryProvider from "./_providers";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -11,8 +12,8 @@ import "./globals.scss";
 //   weight: "100 900",
 // });
 const worksans = Work_Sans({
-  subsets: ['latin'],  
-  weight: [ "200", "300" ,"400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 // const avenir = localFont({
 //   src: [
@@ -39,7 +40,7 @@ const worksans = Work_Sans({
 //     {
 //       path: './fonts/avenir-next/AvenirNextCyr-Heavy.woff',
 //       weight: '900',
-//     },   
+//     },
 //   ],
 //   variable: '--font-mueso',
 // });
@@ -50,12 +51,12 @@ export const metadata = {
 };
 const theme = createTheme({
   breakpoints: {
-    xs: '30em',
-    sm: '48em',
-    md: '64em',
-    lg: '74em',
-    xl: '90em',
-    xxl: '120em'
+    xs: "30em",
+    sm: "48em",
+    md: "64em",
+    lg: "74em",
+    xl: "90em",
+    xxl: "120em",
   },
 });
 export default function RootLayout({
@@ -65,10 +66,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${worksans.className} antialiased`}
-      >       
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+      <body className={`${worksans.className} antialiased`}>
+        <ReactQueryProvider>
+          <MantineProvider theme={theme}>{children}</MantineProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

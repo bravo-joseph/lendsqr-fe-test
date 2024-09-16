@@ -22,8 +22,21 @@
       font-weight: 600;
     }
   }
-  .inActive {
-    background-color: rgba(84, 95, 125, 0.086);
+  .Active {
+    background-color: rgba(57, 205, 99, 0.063);
+    border-radius: 30px;
+    width: 60%;
+    padding-inline: 1.5rem;
+    display: flex;
+    place-content: center;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    color: #39cd62;
+    text-transform: capitalize;
+    font-size: 14px;
+  }
+  .InActive {
+    background-color: #545f7d17;
     border-radius: 30px;
     width: 60%;
     padding-inline: 1.5rem;
@@ -34,7 +47,6 @@
     color: #545f7d;
     text-transform: capitalize;
     font-size: 14px;
-    // padding-top: 2rem;
   }
   .sectionContainer {
     div {
@@ -54,7 +66,9 @@
     background-color: #213f7d1a;
     border: none;
     outline: none;
-    padding-inline: 1.5rem;
+    padding-inline: 0.5rem;
+    display: flex;
+    gap: 1rem;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
     border-radius: 3px;
@@ -125,23 +139,35 @@
     p {
       text-transform: uppercase;
       white-space: nowrap;
-      // white-space: now;
       color: #545f7d;
       font-size: 12px;
       font-weight: 600;
     }
   }
-  .inActive {
-    background-color: rgba(84, 95, 125, 0.086);
+  .Active {
+    background-color: rgba(57, 205, 99, 0.063);
     border-radius: 30px;
     width: 100%;
     padding-inline: 1.5rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
-    color: #545f7d;
+    color: #39cd62;
     text-transform: capitalize;
     font-size: 14px;
     // padding-top: 2rem;
+  }
+  .InActive {
+    background-color: #545f7d17;
+    border-radius: 30px;
+    width: 100%;
+    padding-inline: 1.5rem;
+    display: flex;
+    place-content: center;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    color: #545f7d;
+    text-transform: capitalize;
+    font-size: 14px;
   }
   .sectionContainer {
     width: 100%;
@@ -164,8 +190,10 @@
     background-color: #213f7d1a;
     border: none;
     outline: none;
-    padding-inline: 1.5rem;
+    padding-inline: 0.5rem;
     padding-top: 0.1rem;
+    display: flex;
+    gap: 1rem;
     padding-bottom: 0.1rem;
     border-radius: 3px;
   }

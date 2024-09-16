@@ -6,93 +6,47 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaAngleDown } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { FiUserX } from "react-icons/fi";
+import { User } from "@/app/services/version1/response";
+import { format } from "date-fns";
+import { useRouter } from "next/navigation";
 
-const elements = [
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-  {
-    status: "Inactive",
-    phonenumber: "08078903721",
-    email: "adedeji@lendsqr.com",
-    organization: "Lendsqr",
-    username: "Adedeji",
-    date: "May 15, 2020 10:00 AM",
-  },
-];
+interface Props {
+  data: User[];
+  isloading: boolean;
+  handlePageChange: (newPage: number) => void;
+  totalPages: number;
+}
 
-const UserTable = () => {
-  const rows = elements.map((element) => (
-    <Table.Tr key={element.organization}>
-      <Table.Td>{element.organization}</Table.Td>
-      <Table.Td>{element.username}</Table.Td>
-      <Table.Td>{element.email}</Table.Td>
-      <Table.Td>{element.phonenumber}</Table.Td>
-      <Table.Td>{element.date}</Table.Td>
+const UserTable: React.FC<Props> = ({
+  data,
+  isloading,
+  handlePageChange,
+  totalPages,
+}) => {
+  const router = useRouter();
+  const rows = data.map((element) => (
+    <Table.Tr key={element.personalInformation.orgainzarionName}>
+      <Table.Td>{element.personalInformation.orgainzarionName}</Table.Td>
+      <Table.Td>{element.personalInformation.userName}</Table.Td>
+      <Table.Td>{element.personalInformation.email}</Table.Td>
+      <Table.Td>{element.personalInformation.phoneNumber}</Table.Td>
       <Table.Td>
-        <p className={element.status ? styles.inActive : styles.false}>
-          Inactive
+        {format(
+          element.personalInformation.dateJoioned,
+          "MMMM dd, yyyy hh:mm a"
+        )}
+      </Table.Td>
+      <Table.Td>
+        <p
+          className={
+            element.personalInformation.status === "Active"
+              ? styles.Active
+              : element.personalInformation.status === "Inactive"
+              ? styles.InActive
+              : ""
+          }
+        >
+          {element.personalInformation.status}
         </p>
       </Table.Td>
       <Table.Td>
@@ -105,7 +59,15 @@ const UserTable = () => {
           <Popover.Dropdown>
             <div className={styles.userElipsePopover}>
               <FaRegEye />
-              <p>View Details</p>
+              <p
+                onClick={() => {
+                  router.replace(
+                    `/admin/users/${element.personalInformation.email}`
+                  );
+                }}
+              >
+                View Details
+              </p>
             </div>
             <div className={styles.userElipsePopover}>
               <FiUserX />
@@ -178,12 +140,7 @@ const UserTable = () => {
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Date</p>
-                        <input className={styles.popoverSelect} name="" id="" />
-                      </div>
-                      <div className={styles.popoverDiv}>
-                        <p>Phone Number</p>
                         <input
-                          placeholder="Phone Number"
                           type="date"
                           className={styles.popoverSelect}
                           name=""
@@ -191,12 +148,22 @@ const UserTable = () => {
                         />
                       </div>
                       <div className={styles.popoverDiv}>
-                        <p>Status</p>
-                        <select
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
                           className={styles.popoverSelect}
                           name=""
                           id=""
                         />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select className={styles.popoverSelect} name="" id="">
+                          <option value="Active">Active</option>
+                          <option value="InActive">InActive</option>
+                          <option value="BlackListed">BlackListed</option>
+                          <option value="BlackListed">Pending</option>
+                        </select>
                       </div>
                       <div className={styles.filterActionDiv}>
                         <button>Reset</button>
@@ -243,12 +210,7 @@ const UserTable = () => {
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Date</p>
-                        <input className={styles.popoverSelect} name="" id="" />
-                      </div>
-                      <div className={styles.popoverDiv}>
-                        <p>Phone Number</p>
                         <input
-                          placeholder="Phone Number"
                           type="date"
                           className={styles.popoverSelect}
                           name=""
@@ -256,12 +218,22 @@ const UserTable = () => {
                         />
                       </div>
                       <div className={styles.popoverDiv}>
-                        <p>Status</p>
-                        <select
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
                           className={styles.popoverSelect}
                           name=""
                           id=""
                         />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select className={styles.popoverSelect} name="" id="">
+                          <option value="Active">Active</option>
+                          <option value="InActive">InActive</option>
+                          <option value="BlackListed">BlackListed</option>
+                          <option value="BlackListed">Pending</option>
+                        </select>
                       </div>
                       <div className={styles.filterActionDiv}>
                         <button>Reset</button>
@@ -308,12 +280,7 @@ const UserTable = () => {
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Date</p>
-                        <input className={styles.popoverSelect} name="" id="" />
-                      </div>
-                      <div className={styles.popoverDiv}>
-                        <p>Phone Number</p>
                         <input
-                          placeholder="Phone Number"
                           type="date"
                           className={styles.popoverSelect}
                           name=""
@@ -321,12 +288,22 @@ const UserTable = () => {
                         />
                       </div>
                       <div className={styles.popoverDiv}>
-                        <p>Status</p>
-                        <select
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
                           className={styles.popoverSelect}
                           name=""
                           id=""
                         />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select className={styles.popoverSelect} name="" id="">
+                          <option value="Active">Active</option>
+                          <option value="InActive">InActive</option>
+                          <option value="BlackListed">BlackListed</option>
+                          <option value="BlackListed">Pending</option>
+                        </select>
                       </div>
                       <div className={styles.filterActionDiv}>
                         <button>Reset</button>
@@ -373,12 +350,7 @@ const UserTable = () => {
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Date</p>
-                        <input className={styles.popoverSelect} name="" id="" />
-                      </div>
-                      <div className={styles.popoverDiv}>
-                        <p>Phone Number</p>
                         <input
-                          placeholder="Phone Number"
                           type="date"
                           className={styles.popoverSelect}
                           name=""
@@ -386,12 +358,22 @@ const UserTable = () => {
                         />
                       </div>
                       <div className={styles.popoverDiv}>
-                        <p>Status</p>
-                        <select
+                        <p>Phone Number</p>
+                        <input
+                          placeholder="Phone Number"
                           className={styles.popoverSelect}
                           name=""
                           id=""
                         />
+                      </div>
+                      <div className={styles.popoverDiv}>
+                        <p>Status</p>
+                        <select className={styles.popoverSelect} name="" id="">
+                          <option value="Active">Active</option>
+                          <option value="InActive">InActive</option>
+                          <option value="BlackListed">BlackListed</option>
+                          <option value="BlackListed">Pending</option>
+                        </select>
                       </div>
                       <div className={styles.filterActionDiv}>
                         <button>Reset</button>
@@ -452,11 +434,12 @@ const UserTable = () => {
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Status</p>
-                        <select
-                          className={styles.popoverSelect}
-                          name=""
-                          id=""
-                        />
+                        <select className={styles.popoverSelect} name="" id="">
+                          <option value="Active">Active</option>
+                          <option value="InActive">InActive</option>
+                          <option value="BlackListed">BlackListed</option>
+                          <option value="BlackListed">Pending</option>
+                        </select>
                       </div>
                       <div className={styles.filterActionDiv}>
                         <button>Reset</button>
@@ -517,11 +500,12 @@ const UserTable = () => {
                       </div>
                       <div className={styles.popoverDiv}>
                         <p>Status</p>
-                        <select
-                          className={styles.popoverSelect}
-                          name=""
-                          id=""
-                        />
+                        <select className={styles.popoverSelect} name="" id="">
+                          <option value="Active">Active</option>
+                          <option value="InActive">InActive</option>
+                          <option value="BlackListed">BlackListed</option>
+                          <option value="BlackListed">Pending</option>
+                        </select>
                       </div>
                       <div className={styles.filterActionDiv}>
                         <button>Reset</button>
@@ -533,21 +517,44 @@ const UserTable = () => {
                 <Table.Th />
               </Table.Tr>
             </Table.Thead>
-            <Table.Tbody>{rows}</Table.Tbody>
+            <Table.Tbody>{!isloading && rows}</Table.Tbody>
           </Table>
+          {isloading && (
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <p>Data Loading...</p>
+            </div>
+          )}
         </Table.ScrollContainer>
       </div>
       <section className={styles.sectionContainer}>
         <div>
           <p className={styles.leftPagination}>Showing</p>
           <div className={styles.sizeSelect}>
-            <p>100</p>
+            <p>10</p>            
             <FaAngleDown />
           </div>
           <p className={styles.leftPagination}>out of 100</p>
         </div>
         <div>
-          <Pagination total={10} />;
+          <Pagination
+            total={totalPages}
+            onChange={(value) => {
+              handlePageChange(value);
+            }}
+            styles={{
+              control: {
+                backgroundColor: "transparent",
+                color: "black",
+                borderColor: "gray",
+              },
+            }}
+          />
         </div>
       </section>
     </>

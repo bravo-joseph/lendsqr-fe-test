@@ -6,11 +6,17 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import UserInformation from "@/app/_components/Users/user-information";
 import { useRouter } from "next/navigation";
 
-const UserDetailsPage = () => {
+
+const UserDetailsPage = () => {  
   const router = useRouter();
   return (
     <div className={styles.container}>
-      <div className={styles.routeBack} onClick={() => {router.back()}}>
+      <div
+        className={styles.routeBack}
+        onClick={() => {
+          router.back();
+        }}
+      >
         <Icon icon="teenyicons:arrow-left-solid" fontSize={"24px"} />
         <p>Back to Users</p>
       </div>
