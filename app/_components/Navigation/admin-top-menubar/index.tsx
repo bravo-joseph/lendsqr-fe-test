@@ -42,7 +42,7 @@ const AdminTopMenuBar: React.FC<Props> = ({ navigation }) => {
           <Icon icon="gridicons:dropdown" color="#213F7D" />
         </div>
       </section>
-      <Drawer opened={opened} onClose={close} withCloseButton={false}>
+      <Drawer opened={opened} onClose={close}>
         <div
           style={{
             backgroundColor: "white",
