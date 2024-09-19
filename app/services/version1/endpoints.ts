@@ -1,1 +1,1 @@
-export const GET_ALL_USERS = "https://run.mocky.io/v3/43fc809c-d42d-49db-97a4-7af065214f11";
+export const GET_ALL_USERS = "https://run.mocky.io/v3/242a12df-4c8e-449c-9eff-d61eb6828264";
